@@ -1,8 +1,8 @@
 package com.chudnovskiy.criminal_intent
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 
 private const val TAG = "MainActivity"
 
@@ -14,8 +14,11 @@ class MainActivity : AppCompatActivity() {
 
         val currentFragment = supportFragmentManager.findFragmentById(R.id.fragment_container)
         if (currentFragment == null) {
-            val fragment = CrimeFragment()
-            supportFragmentManager.beginTransaction().add(R.id.fragment_container,fragment).commit()
+            val fragment = CrimeListFragment.newInstance()
+            supportFragmentManager
+                .beginTransaction()
+                .add(R.id.fragment_container, fragment)
+                .commit()
         }
         Log.d(TAG, "onCreate() -=MainActivity=- called")
     }

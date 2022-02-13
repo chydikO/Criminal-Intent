@@ -1,8 +1,7 @@
 package com.chudnovskiy.criminal_intent
 
-import android.content.Context
 import android.os.Bundle
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
@@ -15,6 +14,7 @@ import android.widget.EditText
 
 private const val TAG = "CrimeFragment"
 
+@Suppress("UNREACHABLE_CODE")
 class CrimeFragment: Fragment() {
     private lateinit var crime: Crime
     private lateinit var titleField: EditText
@@ -73,13 +73,18 @@ class CrimeFragment: Fragment() {
         Log.e(TAG, "onStart #CrimeFragment#")
     }
 
-    override fun onAttach(context: Context?) {
-        super.onAttach(context)
-        Log.e(TAG, "onAttach #CrimeFragment#")
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         Log.e(TAG, "onViewCreated #CrimeFragment#")
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        Log.e(TAG, "onDetach #CrimeFragment#")
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        Log.e(TAG, "onDestroyView #CrimeFragment#")
     }
 }
