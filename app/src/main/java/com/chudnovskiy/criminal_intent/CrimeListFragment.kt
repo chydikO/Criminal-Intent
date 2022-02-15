@@ -37,6 +37,7 @@ class CrimeListFragment : Fragment() {
 
     private inner class CrimeHolder(view: View): RecyclerView.ViewHolder(view) {
         val titleTextView: TextView = itemView.findViewById(R.id.crime_title)
+        val dateTextView: TextView = itemView.findViewById(R.id.crime_date)
 
     }
 
